@@ -10,8 +10,11 @@ class ChinaSpider(CrawlSpider):
     start_urls = ['http://tech.china.com/articles']
 
     rules = (
+        # 当前页所有链接
         Rule(LinkExtractor(allow='article\/.*\.html', restrict_xpaths='//div[@id="left_side"]//div[@class="con_item"]'),
              callback='parse_item'),
+        # 下一页所有链接
+        Rule(LinkExtractor(restrict_xpaths='//div[@id="pageStyle"]//a[contains(., "下一页")]'))
     )
 
     def parse_item(self, response):
