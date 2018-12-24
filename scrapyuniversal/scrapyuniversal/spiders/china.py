@@ -7,7 +7,7 @@ from scrapy.spiders import CrawlSpider, Rule
 class ChinaSpider(CrawlSpider):
     name = 'china'
     allowed_domains = ['tech.china.com']
-    start_urls = ['http://tech.china.com/']
+    start_urls = ['http://tech.china.com/articles']
 
     rules = (
         Rule(LinkExtractor(allow=r'Items/'), callback='parse_item', follow=True),
