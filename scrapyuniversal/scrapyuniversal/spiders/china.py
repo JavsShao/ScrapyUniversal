@@ -2,6 +2,8 @@
 import scrapy
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
+from scrapyuniversal.items import *
+from scrapyuniversal.loaders import *
 
 
 class ChinaSpider(CrawlSpider):
@@ -18,8 +20,5 @@ class ChinaSpider(CrawlSpider):
     )
 
     def parse_item(self, response):
-        i = {}
-        #i['domain_id'] = response.xpath('//input[@id="sid"]/@value').extract()
-        #i['name'] = response.xpath('//div[@id="name"]').extract()
-        #i['description'] = response.xpath('//div[@id="description"]').extract()
-        return i
+        loader = ChinaSpider(item=NewsItem(), response=response)
+        loader.add_xpath('title',)
