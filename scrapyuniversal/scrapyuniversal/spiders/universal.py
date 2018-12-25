@@ -3,8 +3,10 @@ import scrapy
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 
-from scrapyuniversal.rules import rules
-from scrapyuniversal.utils import get_config
+# from scrapyuniversal.rules import rules
+from scrapyuniversal.scrapyuniversal.rules import rules
+# from scrapyuniversal.utils import get_config
+from scrapyuniversal.scrapyuniversal.utils import get_config
 
 
 class UniversalSpider(CrawlSpider):
