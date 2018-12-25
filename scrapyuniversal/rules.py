@@ -1,6 +1,5 @@
 from scrapy.linkextractors import LinkExtractor
-from scrapy.spider import Rule
-
+from scrapy.spiders import Rule
 
 rules = {
     'china': (
